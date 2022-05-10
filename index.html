@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="header__input">
+        <input placeholder="Search" type="text" />
+        <i class="fa fa-search"></i>
+      </div>
+
+      <div class="students">
+        <button class="button">ADD STUDENTS</button>
+        <button class="button" onclick="deleteRow()">REMOVE STUDENTS</button>
+      </div>
+    </div>
+
+    <div class="loginname">
+      <p>Login Name</p>
+    </div>
+
+    <div class="button__container__center" id="buttoncontainer">
+      <div class="button__container">
+        <button class="center__students" id="addstudents">ADD STUDENTS</button>
+      </div>
+    </div>
+    <!-- Table-Main-Grid -->
+    <div class="tablemainpage">
+      <table id="tablegridmainpage">
+        <thead>
+          <tr>
+            <th><span id="name" class="w3-button table-column"><i class="caret"></span></th>
+            <th><span id="salary" class="w3-button table-column"><i class="caret"></span></th>
+            <th><span id="price" class="w3-button table-column"><i class="caret"></span></th>
+            <th><span id="expiry" class="w3-button table-column"><i class="caret"></span></th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+    <!-- Collecting Json -->
+    <div>
+      <button class="button save" onclick="saveData()">Save</button>
+    </div>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <!-- grid -->
+        <div class="gridtable clsBox">
+          <div class="gridtablebox">
+            <div class="header">
+              <div class="header__input">
+                <input style="padding: 1px" class="input" id="myinput" placeholder="Search">
+                <i class="fa fa-search"></i>
+              </div>
+
+              <div>
+                <button class="button" onclick="selectAll()">SELECT ALL</button>
+              </div>
+
+              <div>
+                <button class="button" onclick="unSelectAll()">UNSELECT ALL</button>
+              </div>
+            </div>
+            <div>
+            <table id="tablegrid">
+              <thead>
+                <tr>
+                  <th><span id="name" class="w3-button table-column">Name <i class="caret"></span></th>
+                  <th><span id="salary" class="w3-button table-column">Employee Id<i class="caret"></span></th>
+                  <th><span id="price" class="w3-button table-column">Company Name<i class="caret"></span></th>
+                  <th><span id="expiry" class="w3-button table-column">Job Role<i class="caret"></span></th>
+                </tr>
+              </thead>
+              <tbody id="mytable"></tbody>
+            </table>
+            <button class="button">Cancel</button>
+            <button class="button add" onclick="appendRows()">Add to Class</button>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+<script src="./jsondata.js"></script>
+<script src="./common.js"></script>
+</html>
